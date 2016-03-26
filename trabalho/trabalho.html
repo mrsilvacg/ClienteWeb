@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+ 
+<body>
+<form  	id="cadastro" name="cadastro" method="post" onsubmit="return validaCampo(); return false;">
+  <table width="625" border="1">
+   <tr>
+      <td colspan="2"  class="style3" align=center >Cadastro de Clientes </td>
+    </tr>
+	 <tr>
+      <td width="69">CPF:</td>
+      <td width="546"><input name="cpf" type="text" id="cpf" size="14" maxlength="14" onblur="validarCPF(cadastro.cpf.value)" onkeypress="mascara(this, cpf_mask)" />
+        <span class="style1">*</span></td>
+    </tr>
+	    <tr>		
+      <td width="69">Nome:</td>
+      <td width="546"><input name="nome" type="text" id="nome" size="70" maxlength="80" onkeypress="return validaNome(event);" onkeyup="validaMaiuscula(this)"  />
+        <span class="style1">*</span></td>
+    </tr>
+	<tr>
+      <td>Endereço:</td>
+      <td><input name="endereco" type="text" id="endereco" size="70" maxlength="80" onkeyup="validaMaiuscula(this)"  />
+        
+    </tr>
+	<tr>
+      <td>Cidade:</td>
+      <td><input name="cidade" type="text" id="cidade" size= "50" maxlength="50"  onkeyup="validaMaiuscula(this)" />
+        <span class="style1">*</span></td>
+    </tr>
+   
+	 <tr>
+      <td>Sexo:</td>
+      <td><select name="sexo" id="sexo">
+        <option>Escolher Sexo</option>
+        <option value="M">M</option>
+        <option value="F">F</option>
+
+          </select>
+        <span class="style1">*      </span></td>
+    </tr>
+	   
+    <tr>
+     <td>Telefone:</td>
+      <td><input name="telefone" type="text" id="telefone" OnKeyPress="mascaraTelefone('##-####-####', this)" size="20" maxlength="12" />
+        <span class="style2">Apenas números</span> </td>
+    </tr>
+     <tr>
+      <td>Email:</td>
+      <td><input name="email" type="text" id="email" size="40" maxlength="40" onblur=validaEmail() />
+      <span class="style1">*</span></td>
+    </tr>
+    
+    
+    <tr>
+      <td>Senha:</td>
+      <td><input name="senha" type="password" id="senha" size="15" maxlength="15" onblur=validaSenha() />
+          <span class="style1">*</span></td>
+    </tr>
+    <tr>
+	<td>Receber Promoções:</td>
+      <td colspan="2"  >
+	  
+	  <input name="newsSim" type="checkbox" id="news" value="sim" onblur=validaMsg() />Sim 
+	  <input name="newsNao" type="checkbox" id="news1" value="nao"  />
+		Não
+		<label class="style1" name="teste" />
+		</td>
+	
+    </tr>
+	 <tr>
+      <td>Observação:</td>
+	 <td>
+	  <TEXTAREA name="observacao" ROWS=6 COLS=100 maxlength="250" 	 >
+		</TEXTAREA>
+	 </td>
+		
+	</tr>
+    <tr>
+	<td>
+	
+	</td>
+      <td colspan="2"><p>
+        <input name="Enviar" type="submit" id="enviar" value="enviar" />
+       
+ 
+       <input name="Valores" type="button" id="valores" value="valores" onblur=validaValores() />
+         
+ 
+          <span class="style1"> OS Campos com * são obrigatórios!          </span></p>
+      <p>  </p></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
