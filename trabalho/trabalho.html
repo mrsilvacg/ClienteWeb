@@ -48,7 +48,7 @@
 		   
 		<tr>
 		 <td>Telefone:</td>
-		  <td><input name="telefone" type="text" id="telefone" OnKeyPress="mascaraTelefone('##-####-####', this)" size="20" maxlength="12" />
+		  <td><input name="telefone" type="text" id="telefone" onblur=validaTelefone() OnKeyPress="mascaraTelefone('##-####-####', this)" size="20" maxlength="12" />
 			<span class="style2">Apenas números</span> </td>
 		</tr>
 		 <tr>
