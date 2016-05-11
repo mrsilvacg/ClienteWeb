@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TRABALHO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="estilo.css"/> 
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="script.js"></script> 
+  <style>
+    
+  </style>
+</head>
+<body onload ="document.cadastro.cpf.focus()">
+<form  name="cadastro" id="cadastro" method="post">
+
+
+<div class="container-fluid">
+  <div class="row content">
+        
+    <div class="col-sm-12">
+      <div class="alert alert-success">
+        <div id="centro" class="container-fluid"><h4>Cadastro de Clientes</h4></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <input class="form-control" placeholder="CPF" type="text" id="cpf"  maxlength="14" onblur="validarCPF(cadastro.cpf.value)" onkeypress="mascara(this, cpf_mask)"/> 
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <input class="form-control"	placeholder="NOME" type="text" id="nome" maxlength="50"	onkeypress="return validaNome(event);" onkeyup="validaMaiuscula(this)"  /> 
+          </div>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <input class="form-control" placeholder="ENDEREÇO" type="text" id="endereco" maxlength="50"	onkeyup="validaMaiuscula(this)" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <input  class="form-control" placeholder="CIDADE" type="text" id="cidade" maxlength="50" onkeyup="validaMaiuscula(this)" />
+          </div>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <select class="form-control" name="sexo" id="sexo" onBlur="validaSelect(cadastro.sexo.value)">
+					<option class="form-control">--Escolher Sexo--</option>
+					<option>M</option> <option>F</option>
+				</select>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <input class="form-control" placeholder="TELEFONE" type="text" id="telefone" OnKeyPress="mascaraTelefone('##- ####-####',this)" size="20" maxlength="12" onblur=validaTelefone()/>
+          </div>
+        </div>
+      </div>
+	  	  <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+            <input class="form-control" placeholder="EMAIL" type="text" id="email" maxlength="40"	onblur=validaEmail(this)/>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+            <input class="form-control" placeholder="SENHA" type="password" id="senha" size="15" maxlength="15"	onblur=validarSenha() />
+          </div>
+        </div>
+      </div>
+	 
+	   <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <div class="checkbox">
+					 <div align="left" class="container-fluid"><h5>Receber Promoções:</h5></div>
+					<label class="checkbox-inline"><input type="checkbox" id="newsSim" VALUE="newsSim" onclick=validaMsg()>SIM </label>
+					<label class="checkbox-inline"><input type="checkbox" id="newsNao" VALUE="newsNao" onclick=validaMsg() >NÃO</label>
+					
+	
+			</div>
+			<span class="style1" ><div class="container-fluid" id="msgpromocao" ></div></span>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+           <textarea class="form-control" placeholder="OBSERVAÇÃO" rows="3" id="observacao" onblur=validaObservacao()></textarea>
+          </div>
+        </div>
+      </div>
+	  <div class="form-group" id="centro">
+				<input class="btn btn-success btn-xs"  type="submit" id="enviar" value="enviar" onclick=validaCampo() /> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input class="btn btn- primary btn-xs" type="button" id="valores" value="valores" onclick=validarValores() />
+			</div>
+    </div>
+  </div>
+</div>
+</form>
+</body>
+</html>
